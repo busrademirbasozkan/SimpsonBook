@@ -18,6 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
+        //Simpson Objects
+        let homer = Simpsons(initName: "Homer Simpson", initJob: "Nuclear Safety", initImage: UIImage(named: "homer")!)
+        let marge = Simpsons(initName: "Marge Simpson", initJob: "Housewife", initImage: UIImage(named: "marge")!)
+        let bart = Simpsons(initName: "Bart Simpson", initJob: "Student", initImage: UIImage(named: "bart")!)
+        let lisa = Simpsons(initName: "Lisa Simpson", initJob: "Student", initImage: UIImage(named: "lisa")!)
+        let maggie = Simpsons(initName: "Maggie Simpson", initJob: "Baby", initImage: UIImage(named: "maggie")!)
+        
         
     }
 
