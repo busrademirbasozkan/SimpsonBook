@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var tableView: UITableView!
     var mySimpson = [Simpsons]()
+    var chosenSimpson : Simpsons?
    
     
     override func viewDidLoad() {
@@ -43,6 +44,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         cell.textLabel?.text = mySimpson[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenSimpson = mySimpson[indexPath.row]
+        self.performSegue(withIdentifier: "SecondVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SecondVC"{
+            let destination = segue.destination as! SecondViewController
+            destination.selectedSimpson = chosenSimpson
+        }
     }
 }
 
